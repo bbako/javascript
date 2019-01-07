@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>
-	Hello world!  likeObject-2
+	Hello world!  study for javascript class.
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
@@ -26,7 +26,7 @@
 
 <script type="text/javascript">
 	class Word{
-		constructor(word, languagem, lookUpUrl){
+		constructor(word, language, lookUpUrl){
 			this.word = word;
 			this.language = language;
 			this.lookUpUrl = lookUpUrl;
