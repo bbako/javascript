@@ -2,6 +2,11 @@
 <%@ page session="false" %>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="UTF-8" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	<title>Home</title>
 </head>
 <body>
@@ -10,6 +15,11 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+<input type="text" id="password">
+<button id="check" >check</button>
+<div id="result">
+
+</div>
 </body>
 </html>
 
@@ -26,10 +36,11 @@
 	}
 	
 	var diary = (function(){
-		var key = 12345;
+		var key = '12345';
 		var secrets = 'rosebud';
 		
 		function privateUnlock(keyAttempt){
+			console.log("2222")
 			if(key === keyAttempt){
 				console.log('unlocked');
 				diary.open = true;
@@ -39,27 +50,41 @@
 		};
 		
 		function privateTryLock(keyAttempt){
+			console.log("1111")
 			privateUnlock(keyAttempt);
 		}
 		
 		function privateRead(){
+			console.log("3333")
 			if(this.open){
+				console.log("4444")
 				console.log(secrets);
-				
+				$("#result").html(secrets);
 			}else{
 				console.log('no');
 			}
 		}
 		
 		return{
-			oepn:false,
-			read:privateRead,
+			open: false,
+			read: privateRead,
 			tryLock: privateTryLock
 		}
 		
 	})();
 	
-	diary.tryLock(12345);
-	diary.read();
+	$("#check").on('click', function(){
+		
+		console.log($("#password").val());
+		
+		diary.tryLock($("#password").val());
+		diary.read();
+		
+	})
+	
+	
+	
+	// diary.tryLock(12345);
+	// diary.read();
 	
 </script>

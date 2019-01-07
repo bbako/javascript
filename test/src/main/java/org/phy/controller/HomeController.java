@@ -53,5 +53,12 @@ public class HomeController {
 	@RequestMapping(value = "/likeObject", method = RequestMethod.GET)
 	public void likeObject() {
 	}
+	@RequestMapping(value = "/likeObject2", method = RequestMethod.GET)
+	public void likeObject2() {
+	}
+	@RequestMapping(value = "/class", method = RequestMethod.GET)
+	public String classStudy() {
+		return "class";
+	}
 	
 }
