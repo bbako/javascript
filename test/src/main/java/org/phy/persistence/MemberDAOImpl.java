@@ -18,8 +18,6 @@ public class MemberDAOImpl implements MemberDAO {
 	public MemberVO memberOne() {
 		return sess.selectOne(namespace+ ".memberOne");
 	}
-	
-	
-	
+
 
 }

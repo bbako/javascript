@@ -6,13 +6,4 @@
   
 <mapper namespace="org.phy.persistence.BoardDAO" >
 
-	<select id="tryLogin" resultType="org.board.domain.UserVO" parameterType="org.board.dto.LoginDTO">
-		select * from s_member where MEMBER_ID = #{user_id} and MEMBER_PW = #{user_pw}
-		
-	</select>
-	
-	<insert id="regist" parameterType="org.board.domain.UserVO">
-		insert into s_member values(#{member_id},#{member_name},#{member_pw})
-	</insert>
-
 </mapper>
