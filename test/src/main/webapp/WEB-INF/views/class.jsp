@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>
-	Hello world!  study for javascript class.
+	Hello world!  study for javaScript class.
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
