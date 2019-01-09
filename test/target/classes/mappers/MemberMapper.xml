@@ -13,5 +13,13 @@
 	<select id="getTime" resultType="String">
 		select now()
 	</select>
+	
+	<select id="getLoginInfo" resultType="org.phy.domain.MemberVO">
+		select * from member where email = #{email} and password = sha1(#{password})
+	</select> 
+	
+	<select id="checkSessionKey" resultType="org.phy.domain.MemberVO">
+		select * from member where sessionKey = #{key}
+	</select>
 
 </mapper>

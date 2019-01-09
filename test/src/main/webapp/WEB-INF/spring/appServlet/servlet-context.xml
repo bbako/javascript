@@ -21,6 +21,23 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	
+	<beans:bean id="loginInterceptor" class="org.phy.interceptor.LoginInterceptor" />
+	<beans:bean id="authInterceptor" class="org.phy.interceptor.AuthInterceptor" />
+	<interceptors>	
+	
+		<interceptor>
+		<mapping path="/login/loginPost"/>
+		<beans:ref bean="loginInterceptor"/>
+		</interceptor>
+		
+		<interceptor>
+		<mapping path="/**"/> 
+		<beans:ref bean="authInterceptor"/>
+		</interceptor>
+		
+	</interceptors>
+	
 	<context:component-scan base-package="org.phy.controller" />
 	<context:component-scan base-package="org.phy.persistence" />
 	
